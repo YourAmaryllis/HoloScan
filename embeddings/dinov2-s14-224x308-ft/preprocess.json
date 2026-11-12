@@ -1,0 +1,28 @@
+{
+ "model": "vit_small_patch14_dinov2.lvd142m",
+ "checkpoint": "../embeddings/dinov2-s14-224x308-ft/backbone.pt",
+ "dim": 384,
+ "count": 26675,
+ "input_width": 224,
+ "input_height": 308,
+ "layout": "NCHW",
+ "color": "RGB",
+ "resize": "bilinear, full card stretched to input size, no crop",
+ "alpha_fill_rgb": [
+  128,
+  128,
+  128
+ ],
+ "scale": "pixel / 255",
+ "mean": [
+  0.485,
+  0.456,
+  0.406
+ ],
+ "std": [
+  0.229,
+  0.224,
+  0.225
+ ],
+ "output": "CLS token, L2-normalized; compare with dot product"
+}

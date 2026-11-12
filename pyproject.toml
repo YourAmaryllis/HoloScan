@@ -1,0 +1,16 @@
+[project]
+name = "holoscan"
+version = "1.0.0"
+requires-python = ">=3.12"
+dependencies = [
+    "coremltools>=9.0",
+    "numpy>=2.5.4",
+    "onnx>=1.23.2",
+    "onnxruntime>=1.31.1",
+    "onnxscript>=0.7.2",
+    "pillow>=13.0.0",
+    "requests>=2.34.2",
+    "timm>=1.0.31",
+    "torch>=2.15.0",
+    "torchvision>=0.29.2",
+]

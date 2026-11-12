@@ -1,0 +1,21 @@
+# Python / tools
+.venv/
+__pycache__/
+*.log
+.DS_Store
+
+# Local data and build outputs (card images, caches, APKs)
+cache/
+dist/
+
+# Training outputs. Model weights are release assets (scripts/fetch_models.sh);
+# only small metadata is versioned. The phone index is in android/app/src/main/assets/.
+embeddings/*
+!embeddings/art_groups.json
+!embeddings/dinov2-s14-224x308-ft/
+embeddings/dinov2-s14-224x308-ft/*
+!embeddings/dinov2-s14-224x308-ft/ids.json
+!embeddings/dinov2-s14-224x308-ft/preprocess.json
+
+# Working log with local machine / storage notes
+docs/PROGRESS.md

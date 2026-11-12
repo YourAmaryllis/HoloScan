@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from docs/logo/holoscan-icon.svg (original artwork). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+  <group android:pivotX="54" android:pivotY="54" android:scaleX="1.1" android:scaleY="1.1">
+    <path android:pathData="M43,34.5 H65 A3,3 0 0 1 68,37.5 V70.5 A3,3 0 0 1 65,73.5 H43 A3,3 0 0 1 40,70.5 V37.5 A3,3 0 0 1 43,34.5 Z"><aapt:attr name="android:fillColor"><gradient android:type="linear" android:startX="40" android:startY="34" android:endX="68" android:endY="74"><item android:offset="0" android:color="#FF5EE7DF"/><item android:offset="0.35" android:color="#FF8C7CF0"/><item android:offset="0.68" android:color="#FFF28FD8"/><item android:offset="1" android:color="#FFFFD27A"/></gradient></aapt:attr></path>
+    <path android:pathData="M44.5,38 H63.5 A1.5,1.5 0 0 1 65,39.5 V53.5 A1.5,1.5 0 0 1 63.5,55 H44.5 A1.5,1.5 0 0 1 43,53.5 V39.5 A1.5,1.5 0 0 1 44.5,38 Z" android:fillColor="#FFFFFF" android:fillAlpha="0.28"/>
+    <path android:pathData="M44,58 H64 A1,1 0 0 1 65,59 V59 A1,1 0 0 1 64,60 H44 A1,1 0 0 1 43,59 V59 A1,1 0 0 1 44,58 Z" android:fillColor="#FFFFFF" android:fillAlpha="0.35"/>
+    <path android:pathData="M44,62 H57 A1,1 0 0 1 58,63 V63 A1,1 0 0 1 57,64 H44 A1,1 0 0 1 43,63 V63 A1,1 0 0 1 44,62 Z" android:fillColor="#FFFFFF" android:fillAlpha="0.35"/>
+    <path android:pathData="M43,34.5 H65 A3,3 0 0 1 68,37.5 V70.5 A3,3 0 0 1 65,73.5 H43 A3,3 0 0 1 40,70.5 V37.5 A3,3 0 0 1 43,34.5 Z"><aapt:attr name="android:fillColor"><gradient android:type="linear" android:startX="40" android:startY="34" android:endX="68" android:endY="74"><item android:offset="0.3" android:color="#00FFFFFF"/><item android:offset="0.42" android:color="#8CFFFFFF"/><item android:offset="0.5" android:color="#00FFFFFF"/></gradient></aapt:attr></path>
+    <path android:pathData="M34,37 V31 A2,2 0 0 1 36,29 H42" android:strokeColor="#FFFFFF" android:strokeWidth="2.6" android:strokeLineCap="round" android:strokeLineJoin="round"/>
+    <path android:pathData="M66,29 H72 A2,2 0 0 1 74,31 V37" android:strokeColor="#FFFFFF" android:strokeWidth="2.6" android:strokeLineCap="round" android:strokeLineJoin="round"/>
+    <path android:pathData="M74,71 V77 A2,2 0 0 1 72,79 H66" android:strokeColor="#FFFFFF" android:strokeWidth="2.6" android:strokeLineCap="round" android:strokeLineJoin="round"/>
+    <path android:pathData="M42,79 H36 A2,2 0 0 1 34,77 V71" android:strokeColor="#FFFFFF" android:strokeWidth="2.6" android:strokeLineCap="round" android:strokeLineJoin="round"/>
+    <path android:pathData="M33,52 H75" android:strokeColor="#5EE7DF" android:strokeAlpha="0.25" android:strokeWidth="6" android:strokeLineCap="round"/>
+    <path android:pathData="M33,52 H75" android:strokeColor="#B9FFF9" android:strokeWidth="1.6" android:strokeLineCap="round"/>
+  </group>
+</vector>

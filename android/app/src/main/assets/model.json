@@ -1,0 +1,7 @@
+{
+ "tag": "dinov2-s14-224x308-ft",
+ "dim": 384,
+ "count": 26675,
+ "input_width": 224,
+ "input_height": 308
+}

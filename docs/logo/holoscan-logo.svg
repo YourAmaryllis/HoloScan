@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 108" width="1260" height="324">
+  <!-- HoloScan wordmark: the icon artwork plus the name. Original artwork, no third-party marks. -->
+  <defs>
+    <linearGradient id="foil" x1="40" y1="34" x2="68" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5EE7DF"/><stop offset="0.35" stop-color="#8C7CF0"/>
+      <stop offset="0.68" stop-color="#F28FD8"/><stop offset="1" stop-color="#FFD27A"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="40" y1="34" x2="68" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0.30" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.42" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="0.50" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="word" x1="100" y1="0" x2="228" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5EE7DF"/><stop offset="0.5" stop-color="#8C7CF0"/><stop offset="1" stop-color="#F28FD8"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="108" rx="20" fill="#0F151C"/>
+  <g transform="translate(54 54) scale(1.1) translate(-54 -54)">
+    <rect x="40" y="34.5" width="28" height="39" rx="3" fill="url(#foil)"/>
+    <rect x="43" y="38" width="22" height="17" rx="1.5" fill="#FFFFFF" fill-opacity="0.28"/>
+    <rect x="43" y="58" width="22" height="2" rx="1" fill="#FFFFFF" fill-opacity="0.35"/>
+    <rect x="43" y="62" width="15" height="2" rx="1" fill="#FFFFFF" fill-opacity="0.35"/>
+    <rect x="40" y="34.5" width="28" height="39" rx="3" fill="url(#sheen)"/>
+    <g fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M34 37 V31 a2 2 0 0 1 2 -2 H42"/><path d="M66 29 H72 a2 2 0 0 1 2 2 V37"/>
+      <path d="M74 71 V77 a2 2 0 0 1 -2 2 H66"/><path d="M42 79 H36 a2 2 0 0 1 -2 -2 V71"/>
+    </g>
+    <path d="M33 52 H75" stroke="#5EE7DF" stroke-opacity="0.25" stroke-width="6" stroke-linecap="round"/>
+    <path d="M33 52 H75" stroke="#B9FFF9" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <text x="100" y="68" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="46" letter-spacing="0.5">
+    <tspan fill="url(#word)">Holo</tspan><tspan fill="#FFFFFF">Scan</tspan>
+  </text>
+</svg>

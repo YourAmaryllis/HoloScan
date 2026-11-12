@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="1024" height="1024">
+  <!-- HoloScan app icon. Original artwork: a blank foil card, viewfinder corners, scan line.
+       Same 108-unit grid as the Android adaptive icon (artwork inside the 66-unit safe zone). -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#1E2A38"/>
+      <stop offset="1" stop-color="#0A0E13"/>
+    </radialGradient>
+    <linearGradient id="foil" x1="40" y1="34" x2="68" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5EE7DF"/>
+      <stop offset="0.35" stop-color="#8C7CF0"/>
+      <stop offset="0.68" stop-color="#F28FD8"/>
+      <stop offset="1" stop-color="#FFD27A"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="40" y1="34" x2="68" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0.30" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.42" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="0.50" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="108" height="108" fill="url(#bg)"/>
+  <g transform="translate(54 54) scale(1.1) translate(-54 -54)">
+  <!-- card -->
+  <rect x="40" y="34.5" width="28" height="39" rx="3" fill="url(#foil)"/>
+  <rect x="43" y="38" width="22" height="17" rx="1.5" fill="#FFFFFF" fill-opacity="0.28"/>
+  <rect x="43" y="58" width="22" height="2" rx="1" fill="#FFFFFF" fill-opacity="0.35"/>
+  <rect x="43" y="62" width="15" height="2" rx="1" fill="#FFFFFF" fill-opacity="0.35"/>
+  <rect x="40" y="34.5" width="28" height="39" rx="3" fill="url(#sheen)"/>
+  <!-- viewfinder corners -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 37 V31 a2 2 0 0 1 2 -2 H42"/>
+    <path d="M66 29 H72 a2 2 0 0 1 2 2 V37"/>
+    <path d="M74 71 V77 a2 2 0 0 1 -2 2 H66"/>
+    <path d="M42 79 H36 a2 2 0 0 1 -2 -2 V71"/>
+  </g>
+  <!-- scan line with glow -->
+  <path d="M33 52 H75" stroke="#5EE7DF" stroke-opacity="0.25" stroke-width="6" stroke-linecap="round"/>
+  <path d="M33 52 H75" stroke="#B9FFF9" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+</svg>

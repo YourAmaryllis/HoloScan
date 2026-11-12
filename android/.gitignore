@@ -1,0 +1,13 @@
+.gradle/
+.kotlin/
+.idea/
+build/
+local.properties
+
+# Models are release assets (../scripts/fetch_models.sh). The index, card list
+# and price snapshot in assets/ are versioned.
+app/src/main/assets/*.onnx
+
+# Parity fixtures are raw pixels of card images (third-party artwork); generated
+# by ml/export_android.py and kept local. ParityTest skips without them.
+app/src/test/resources/parity/
