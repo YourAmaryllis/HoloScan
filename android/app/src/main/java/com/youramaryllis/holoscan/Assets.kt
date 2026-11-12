@@ -11,13 +11,14 @@ object Assets {
     const val MODEL_INT8 = "embedder.int8.onnx"
 
     fun modelFile(context: Context, name: String = MODEL_FULL): File {
-        // ONNX Runtime wants a file path; copy once out of the APK.
+        // ONNX Runtime wants a file path; copy once out of the APK, again after each
+        // app update. (No openFd size check: asset-pack files may be compressed.)
         val out = File(context.filesDir, name)
-        val size = context.assets.openFd(name).use { it.length }
-        if (!out.exists() || out.length() != size) {
-            context.assets.open(name).use { input ->
-                out.outputStream().use { input.copyTo(it) }
-            }
+        val installed = context.packageManager.getPackageInfo(context.packageName, 0).lastUpdateTime
+        if (!out.exists() || out.lastModified() < installed) {
+            val tmp = File(context.filesDir, "$name.part")
+            context.assets.open(name).use { input -> tmp.outputStream().use { input.copyTo(it) } }
+            if (!tmp.renameTo(out)) error("could not write $out")
         }
         return out
     }

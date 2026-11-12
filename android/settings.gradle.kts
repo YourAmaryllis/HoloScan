@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "HoloScan"
 include(":app")
+include(":models")

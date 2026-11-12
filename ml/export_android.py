@@ -1,8 +1,10 @@
 """Package a model + card index into the Android app's assets.
 
-android/app/src/main/assets/
+android/models/src/main/assets/   (install-time asset pack)
   embedder.onnx      model: [1,3,308,224] RGB in [0,1] -> [1,384] L2-normalized
   embedder.int8.onnx same model with int8 weights (~4x smaller, usually faster)
+
+android/app/src/main/assets/
   index.f16          float16 little-endian, rows aligned with cards.json
   cards.json         [{id,name,set,series,number,total,rarity,released,artist}, ...]
   model.json         tag, dim, count, input size
@@ -59,8 +61,10 @@ def main():
     assets = ANDROID_APP / "main" / "assets"
     assets.mkdir(parents=True, exist_ok=True)
 
-    shutil.copy(src / "embedder.onnx", assets / "embedder.onnx")
-    shutil.copy(src / "embedder.int8.onnx", assets / "embedder.int8.onnx")
+    models = ANDROID_APP.parent.parent / "models" / "src" / "main" / "assets"
+    models.mkdir(parents=True, exist_ok=True)
+    shutil.copy(src / "embedder.onnx", models / "embedder.onnx")
+    shutil.copy(src / "embedder.int8.onnx", models / "embedder.int8.onnx")
     emb.astype("<f2").tofile(assets / "index.f16")
     (assets / "cards.json").write_text(json.dumps(card_rows(ids), separators=(",", ":")))
     (assets / "model.json").write_text(json.dumps(

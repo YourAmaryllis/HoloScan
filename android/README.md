@@ -38,10 +38,16 @@ only by *Refresh prices*.
 ## Build
 
 ```sh
-../scripts/fetch_models.sh          # embedder.onnx + embedder.int8.onnx -> app/src/main/assets/
+../scripts/fetch_models.sh          # embedder.onnx + embedder.int8.onnx -> models/src/main/assets/
 ./gradlew :app:testDebugUnitTest    # lock logic, backup CSV, price limits (+ parity if fixtures exist)
-./gradlew :app:assembleDebug
+./gradlew :app:assembleDebug        # debug APK with the models included
 ```
+
+Play release: `./gradlew :app:bundleRelease` builds an app bundle with the models in the
+install-time asset pack `:models` (about 43 MB base download). It's signed with the
+upload key given by the Gradle properties `holoscanUploadStoreFile` and
+`holoscanUploadStorePassword` (alias `upload`, or `holoscanUploadKeyAlias`);
+without them it's debug-signed.
 
 To rebuild the assets from the pipeline instead:
 `cd ../ml && uv run python export_android.py --tag dinov2-s14-224x308-ft`. That also

@@ -15,7 +15,7 @@ import java.io.File
  */
 class ParityTest {
     private val dir = javaClass.classLoader!!.getResource("parity/reference.txt")?.let { File(it.toURI()).parentFile }
-    private val model = File("src/main/assets/embedder.onnx")
+    private val model = File("../models/src/main/assets/embedder.onnx")
 
     @Test
     fun kotlinPipelineMatchesPython() {

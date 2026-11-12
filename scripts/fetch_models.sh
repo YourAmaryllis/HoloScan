@@ -1,12 +1,12 @@
 #!/bin/sh
 # Downloads the model files that are too large for git from the GitHub release.
-#   scripts/fetch_models.sh          # phone models -> android/app/src/main/assets/ (needed to build the app)
+#   scripts/fetch_models.sh          # phone models -> android/models/src/main/assets/ (needed to build the app)
 #   scripts/fetch_models.sh --all    # also the PyTorch checkpoint, fp32 index and Core ML model -> embeddings/
 set -eu
 TAG="${HOLOSCAN_RELEASE:-v1.0}"
 BASE="https://github.com/YourAmaryllis/HoloScan/releases/download/$TAG"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-ASSETS="$ROOT/android/app/src/main/assets"
+ASSETS="$ROOT/android/models/src/main/assets"
 EMB="$ROOT/embeddings/dinov2-s14-224x308-ft"
 
 get() {  # get <file> <dir>

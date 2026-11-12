@@ -23,13 +23,31 @@ android {
         ndk { abiFilters += listOf("arm64-v8a") }
     }
 
+    // Release signing comes from Gradle properties supplied at build time
+    // (holoscanUploadStoreFile, holoscanUploadStorePassword, optional
+    // holoscanUploadKeyAlias). Without them, release builds are debug-signed.
+    val uploadStore = providers.gradleProperty("holoscanUploadStoreFile").orNull
+    signingConfigs {
+        if (uploadStore != null) create("upload") {
+            storeFile = file(uploadStore)
+            storePassword = providers.gradleProperty("holoscanUploadStorePassword").get()
+            keyAlias = providers.gradleProperty("holoscanUploadKeyAlias").orElse("upload").get()
+            keyPassword = storePassword
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
-            // Debug-signed so the APK installs directly for testing.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.findByName("upload") ?: signingConfigs.getByName("debug")
         }
     }
+
+    // The ONNX models (~110 MB) ship in the install-time asset pack ":models", so the
+    // Play base download stays small; they're still regular assets at run time.
+    // Debug APKs (adb install, no Play) get the same files directly.
+    assetPacks += listOf(":models")
+    sourceSets.getByName("debug").assets.srcDir("../models/src/main/assets")
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
