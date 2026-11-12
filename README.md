@@ -105,6 +105,12 @@ Contributions are welcome, especially:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Please open an issue first for anything large.
 
+## Privacy
+
+No account, analytics or ads. Camera frames are processed on the phone and never
+saved or uploaded. The only network use is *Refresh prices*, which sends card ids
+to the price services. See [PRIVACY.md](PRIVACY.md).
+
 ## License
 
 [PolyForm Noncommercial 1.0.0](LICENSE.md): free to use, change and share for
