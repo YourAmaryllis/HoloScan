@@ -5,8 +5,14 @@
 Identify Pokémon TCG cards with the phone camera, fully on-device, and keep a
 collection with estimated prices. No account, no server, no ads.
 
-**Download:** the Android APK is on the [Releases](../../releases) page.
-Copy it to the phone and open it, allowing "install unknown apps".
+[<img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png"
+     alt="Get it on Obtainium" height="80">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/YourAmaryllis/HoloScan)
+
+**Install:** with [Obtainium](https://github.com/ImranR98/Obtainium), which installs the app
+from this repo's releases and keeps it updated, tap the badge above or add
+`https://github.com/YourAmaryllis/HoloScan` in Obtainium. You can also download the APK from
+[Releases](../../releases), open it on the phone and allow "install unknown apps".
+Android 8.0+, 64-bit ARM.
 
 ## Features
 
