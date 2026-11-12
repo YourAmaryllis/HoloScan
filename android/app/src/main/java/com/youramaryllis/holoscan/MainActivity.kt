@@ -169,6 +169,18 @@ class MainActivity : ComponentActivity() {
         var modelName by remember { mutableStateOf(settings.model) }
         var autoAddSeconds by remember { mutableStateOf(settings.autoAddSeconds) }
         var buttonsLeft by remember { mutableStateOf(settings.buttonsLeft) }
+        var disclaimerOk by remember { mutableStateOf(settings.disclaimerAccepted >= DISCLAIMER_VERSION) }
+        // Shown once (until acknowledged), before the first scan.
+        if (!disclaimerOk) AlertDialog(
+            onDismissRequest = {},
+            title = { Text("Before you start") },
+            text = { Text(DISCLAIMER) },
+            confirmButton = {
+                TextButton(onClick = { settings.disclaimerAccepted = DISCLAIMER_VERSION; disclaimerOk = true }) {
+                    Text("I understand")
+                }
+            },
+        )
         BackHandler(enabled = showCollection || showSettings) { showCollection = false; showSettings = false }
         when {
             showSettings -> SettingsScreen(byId, collection, modelName, autoAddSeconds, buttonsLeft,
@@ -292,6 +304,14 @@ class MainActivity : ComponentActivity() {
                     Text("Reset", color = if (collection.isNotEmpty()) RED else Color.Gray)
                 }
             }
+
+            Spacer(Modifier.height(20.dp))
+            Heading("About")
+            val version = runCatching { packageManager.getPackageInfo(packageName, 0).versionName }.getOrNull()
+            Note("HoloScan ${version.orEmpty()} · github.com/YourAmaryllis/HoloScan\n" +
+                "Free for noncommercial use (PolyForm Noncommercial 1.0.0).")
+            Spacer(Modifier.height(8.dp))
+            Note(DISCLAIMER)
         }
 
         if (confirmReset) AlertDialog(
@@ -677,6 +697,7 @@ class MainActivity : ComponentActivity() {
                         fontSize = 20.sp, fontWeight = FontWeight.Bold)
                     val total = collection.entries.sumOf { (id, n) -> (prices[id]?.usdEstimate ?: 0.0) * n }
                     Note("≈ ${usd(total)} estimated${priceDate()}")
+                    Note("Estimates only: check current prices before buying, selling or trading.")
                 }
                 TextButton(onClick = onClose) { Text("Scan") }
             }
@@ -795,5 +816,14 @@ class MainActivity : ComponentActivity() {
         val AMBER = Color(0xFFE0B050)
         val RED = Color(0xFFE57373)
         const val TAG = "HoloScan"
+        const val DISCLAIMER_VERSION = 1
+        const val DISCLAIMER =
+            "Card identification is done by an AI model and can be wrong, especially between reprints " +
+            "that share the same artwork. Prices are estimates from public market data (TCGplayer, " +
+            "Cardmarket) and may be outdated or inaccurate. Always double-check the card and its value " +
+            "before buying, selling or trading.\n\n" +
+            "HoloScan is provided as is, without warranty. The authors are not responsible for any loss " +
+            "from relying on its results.\n\n" +
+            "Unofficial fan project, not affiliated with Nintendo, Creatures, GAME FREAK or The Pokémon Company."
     }
 }

@@ -25,6 +25,13 @@ Copy it to the phone and open it, allowing "install unknown apps".
   phone or open it in a spreadsheet.
 - Two models: **Fast (int8)**, the default, and **Full (fp32)**, same accuracy in testing.
 
+> **Disclaimer:** card identification is done by an AI model and can be wrong,
+> especially between reprints that share the same artwork. Prices are estimates
+> from public market data and may be outdated or inaccurate. Always double-check
+> the card and its value before buying, selling or trading. HoloScan is provided
+> as is, without warranty, and the authors are not responsible for any loss from
+> relying on its results (see "No Liability" in the [license](LICENSE.md)).
+
 Cards are recognised right side up only. Same-art reprints look identical to
 the camera, so check the set and number and pick the exact one with ✕ if needed.
 
@@ -84,6 +91,19 @@ The bundled snapshot is built with `ml/fetch_prices.py` from
 [TCGCSV](https://tcgcsv.com) (TCGplayer prices for cards TCGdex doesn't cover).
 The app reads prices through `PriceSource` (`android/.../Prices.kt`), so the
 source can be swapped later without touching the UI. Prices are estimates, not offers.
+
+## Contributing
+
+Contributions are welcome, especially:
+
+- **An iPhone app.** The Core ML model (`Embedder.mlpackage`, in the release) and the
+  shared card index are ready; it needs the camera, lock and collection logic ported.
+- **Models for other trading card games.** The pipeline in `ml/` is game-agnostic:
+  card images and metadata in, an embedding index out. Add a data source and a
+  config, and the same training and export steps apply.
+- Fixes, missing cards, better price sources, translations.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Please open an issue first for anything large.
 
 ## License
 

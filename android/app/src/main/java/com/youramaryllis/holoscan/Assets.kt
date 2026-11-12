@@ -89,6 +89,11 @@ class Settings(context: Context) {
         get() = prefs.getBoolean("buttonsLeft", false)
         set(value) = prefs.edit().putBoolean("buttonsLeft", value).apply()
 
+    // Disclaimer version the user has acknowledged (0 = never); bump DISCLAIMER_VERSION to show it again.
+    var disclaimerAccepted: Int
+        get() = prefs.getInt("disclaimerAccepted", 0)
+        set(value) = prefs.edit().putInt("disclaimerAccepted", value).apply()
+
     // Wall-clock ms of recent price refreshes (for the rate limit).
     var priceRefreshes: List<Long>
         get() = prefs.getString("priceRefreshes", "").orEmpty().split(',').mapNotNull { it.toLongOrNull() }
